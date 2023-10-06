@@ -5,6 +5,7 @@ import Link from "next/link"
 export default function page() {
   const services = DB.map(service => {
     const {
+      serviceID: id,
       serviceTitle: title,
       serviceDesc: desc,
       serviceCover: cover,
@@ -13,9 +14,11 @@ export default function page() {
     const servicePageUrl = title.split(" ").join("-").toLowerCase()
 
     return (
-      <div className="service">
+      <div key={servicePageUrl} className="service">
         <div className="service-title">
-          <Link href={`/services/${servicePageUrl}`}>{title}</Link>
+          <Link href={`/services/service?id=${id}&service=${servicePageUrl}`}>
+            {title}
+          </Link>
         </div>
         <div className="service-desc">{desc}</div>
         <div className="service-cover">
