@@ -34,7 +34,8 @@ serviceID: 1
 }
 
 export default function HireDriver({ drivers }: { drivers: driverType }) {
-  const driver = drivers.map((driver: driverType[0]) => {
+  // console.log(drivers)
+  const driver = drivers.map(driver => {
     const {
       driverAge,
       driverCoast,
@@ -45,6 +46,7 @@ export default function HireDriver({ drivers }: { drivers: driverType }) {
       driverSkills,
       serviceID,
     } = driver
+
     return (
       <div key={driverID} className="driver-profile">
         <div className="driver-img">
@@ -67,4 +69,47 @@ export default function HireDriver({ drivers }: { drivers: driverType }) {
     )
   })
   return <div className="drivers">{driver}</div>
+}
+
+{
+  /* 
+
+ const driver = drivers.map((driver: driverType[0]) => {
+    const {
+      driverAge,
+      driverCoast,
+      driverExp,
+      driverID,
+      driverImage,
+      driverName,
+      driverSkills,
+      serviceID,
+    } = driver
+
+    console.log(driverImage)
+    return (
+      <div key={driverID} className="driver-profile">
+        <div className="driver-img">
+          <Image
+            priority={true}
+            height={driverImage.height}
+            width={driverImage.width}
+            src={driverImage.src}
+            alt={driverName}
+          />
+        </div>
+        <div className="driver-info">
+          <h3>{driverName}</h3>
+          <p>{driverSkills}</p>
+          <p>{driverAge} Years</p>
+          <p>{driverCoast} $</p>
+          <p>{driverExp} Years</p>
+        </div>
+      </div>
+    )
+  })
+
+
+
+*/
 }

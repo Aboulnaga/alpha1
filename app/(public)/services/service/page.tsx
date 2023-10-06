@@ -54,8 +54,8 @@ export default function page({ searchParams: { id } }: pageProps) {
 
   checkIndex()
 
-  const driversTable: driverType = DB[id - 0].dataTable as driverType
-  const rentCarsTable: CarsType = DB[id - 1].dataTable as CarsType
+  const driversTable: driverType = DB[0].dataTable as driverType
+  const rentCarsTable: CarsType = DB[1].dataTable as CarsType
   // console.log(serviceTable)
 
   return (
