@@ -23,7 +23,7 @@ export default function page({ searchParams: { id } }: pageProps) {
   checkIndex()
 
   const serviceTable = DB[id - 1].dataTable
-  console.log(serviceTable)
+  // console.log(serviceTable)
 
   return (
     <>

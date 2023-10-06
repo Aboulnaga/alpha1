@@ -53,9 +53,9 @@ import picUpCover from "../assets/picUpCover.jpg"
 import FordF150_1 from "../assets/FordF150_1.jpg"
 import FordF150_2 from "../assets/FordF150_2.jpg"
 import FordF150_3 from "../assets/FordF150_3.jpg"
-import Silverado2500_1 from "../assets/silverado2500_1.jpg"
-import Silverado2500_2 from "../assets/silverado2500_2.jpg"
-import Silverado2500_3 from "../assets/silverado2500_3.jpeg"
+import Silv_1 from "../assets/silv2500_1.jpg"
+import Silv_2 from "../assets/silv2500_2.jpg"
+import Silv_3 from "../assets/silv2500_3.jpeg"
 import FordMaverick_1 from "../assets/FordMaverick_1.png"
 import FordMaverick_2 from "../assets/FordMaverick_2.png"
 import FordEv_1 from "../assets/FordEv_1.jpg"
@@ -485,7 +485,7 @@ converting the two tables. The RV is equipped with an enclosed shower with a gla
         pickUpMaxPayLoad: "2,370 LBS",
         pickUpCoast: 199,
         pickUpStock: 7,
-        pickUpImgs: [Silverado2500_1, Silverado2500_2, Silverado2500_3],
+        pickUpImgs: [Silv_1, Silv_2, Silv_3],
       },
       // end pic up 2
 

@@ -3,6 +3,10 @@ import DB from "../../DataBase/DataBase"
 import Link from "next/link"
 
 export default function page() {
+  const er = DB[3].dataTable[1].pickUpImgs.map(img => {
+    return <img src={img.src} alt={img.src} />
+  })
+  // console.log(er)
   const services = DB.map(service => {
     const {
       serviceID: id,
@@ -27,5 +31,10 @@ export default function page() {
       </div>
     )
   })
-  return <div className="services">{services}</div>
+  return (
+    <div className="services">
+      <div className="err">{er}</div>
+      {services}
+    </div>
+  )
 }
