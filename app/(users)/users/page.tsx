@@ -18,7 +18,7 @@ export default async function UsersPage() {
   const user = () => {
     return users.map((user: userType) => {
       return (
-        <div className="user">
+        <div key={user.id} className="user">
           <div className="user-id">{user.id}</div>
           <div className="user-name">{user.login.username}</div>
           <Link href={`/users/${user.id}`}>more ...</Link>
