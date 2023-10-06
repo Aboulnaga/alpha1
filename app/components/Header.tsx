@@ -16,12 +16,8 @@ export default function Header() {
   const mapUrls = usrls.map(pageUrl => {
     const { url, page } = pageUrl
     return (
-      <li>
-        <Link
-          key={page}
-          className={pathName === url ? "active" : ""}
-          href={url}
-        >
+      <li key={page}>
+        <Link className={pathName === url ? "active" : ""} href={url}>
           {page}
         </Link>
       </li>
