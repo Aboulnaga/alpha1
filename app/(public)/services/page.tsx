@@ -1,11 +1,12 @@
 import React from "react"
 import DB from "../../DataBase/DataBase"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function page() {
-  const er = DB[3].dataTable[1].pickUpImgs.map(img => {
-    return <img src={img.src} alt={img.src} />
-  })
+  // const er = DB[3].dataTable[1].pickUpImgs.map(img => {
+  //   return <img src={img.src} alt={img.src} />
+  // })
   // console.log(er)
   const services = DB.map(service => {
     const {
@@ -26,15 +27,16 @@ export default function page() {
         </div>
         <div className="service-desc">{desc}</div>
         <div className="service-cover">
-          <img src={cover.src} alt={title} />
+          <Image
+            priority={true}
+            height={cover.height}
+            width={cover.width}
+            src={cover.src}
+            alt={title}
+          />
         </div>
       </div>
     )
   })
-  return (
-    <div className="services">
-      <div className="err">{er}</div>
-      {services}
-    </div>
-  )
+  return <div className="services">{services}</div>
 }

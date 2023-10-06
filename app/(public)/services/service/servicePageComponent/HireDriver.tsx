@@ -1,11 +1,18 @@
 import React from "react"
+import Image from "next/image"
 
 type driverType = {
   driverAge: number
   driverCoast: number
   driverExp: number
   driverID: string
-  driverImage: { src: string }
+  driverImage: {
+    src: string
+    height: number
+    width: number
+    blurDataURL: string
+    blurWidth: number
+  }
   driverName: string
   driverSkills: string
   serviceID: number
@@ -41,7 +48,13 @@ export default function HireDriver({ drivers }: { drivers: driverType }) {
     return (
       <div key={driverID} className="driver-profile">
         <div className="driver-img">
-          <img src={driverImage.src} alt={driverName} />
+          <Image
+            priority={true}
+            height={driverImage.height}
+            width={driverImage.width}
+            src={driverImage.src}
+            alt={driverName}
+          />
         </div>
         <div className="driver-info">
           <h3>{driverName}</h3>

@@ -1,5 +1,6 @@
 import React from "react"
 import "./RentCar.scss"
+import Image from "next/image"
 type CarsType = {
   carCoast: number
   carDistance: number
@@ -7,7 +8,7 @@ type CarsType = {
   carFuel: number
   carGearbox: string
   carID: string
-  carImgs: { src: string }[]
+  carImgs: { src: string; height: number; width: number }[]
   carModel: string
   carPassengers: number
   carStock: number
@@ -89,7 +90,16 @@ export default function RentCAr({ cars }: { cars: CarsType }) {
 
         <div className="car-imgs">
           {carImgs.map((img, index) => {
-            return <img src={img.src} alt={carModel} key={index} />
+            return (
+              <Image
+                priority={true}
+                src={img.src}
+                alt={carModel}
+                width={100}
+                height={100}
+                key={index}
+              />
+            )
           })}
         </div>
       </div>
