@@ -11,6 +11,38 @@ type pageProps = {
   }
 }
 
+type driverType = {
+  driverAge: number
+  driverCoast: number
+  driverExp: number
+  driverID: string
+  driverImage: {
+    src: string
+    height: number
+    width: number
+    blurDataURL: string
+    blurWidth: number
+  }
+  driverName: string
+  driverSkills: string
+  serviceID: number
+}[]
+
+type CarsType = {
+  carCoast: number
+  carDistance: number
+  carDoorsNu: number
+  carFuel: number
+  carGearbox: string
+  carID: string
+  carImgs: { src: string; height: number; width: number }[]
+  carModel: string
+  carPassengers: number
+  carStock: number
+  carYear: number
+  serviceID: number
+}[]
+
 export default function page({ searchParams: { id } }: pageProps) {
   const idIndex = DB.findIndex(service => service.serviceID == id)
 
@@ -22,13 +54,14 @@ export default function page({ searchParams: { id } }: pageProps) {
 
   checkIndex()
 
-  const serviceTable = DB[id - 1].dataTable
+  const driversTable: driverType = DB[id - 0].dataTable as driverType
+  const rentCarsTable: CarsType = DB[id - 1].dataTable as CarsType
   // console.log(serviceTable)
 
   return (
     <>
-      {id - 1 == 0 ? <HireDriver drivers={serviceTable} /> : null}
-      {id - 1 == 1 ? <RentCAr cars={serviceTable} /> : null}
+      {id - 1 == 0 ? <HireDriver drivers={driversTable} /> : null}
+      {id - 1 == 1 ? <RentCAr cars={rentCarsTable} /> : null}
 
       <h1>{id}</h1>
     </>
